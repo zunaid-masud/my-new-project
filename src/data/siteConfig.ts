@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
     linkedin: "https://www.linkedin.com/in/md-zunaid-masud-616083379",
     facebook: "",
     github: "https://github.com/zunaid-masud",
-    fiverr: "https://www.fiverr.com/sellers/zunaidmasud2004/",
+    fiverr: "https://www.fiverr.com/zunaidmasud2004/",
     upwork: "https://www.upwork.com/freelancers/~01b21caefb906f4ace?companyReference=2090815582483475448&mp_source=share"
   },
   stats: {
