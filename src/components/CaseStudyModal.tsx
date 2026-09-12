@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  X, ExternalLink, ChevronLeft, ChevronRight, CheckCircle2, 
+  X, ChevronLeft, ChevronRight, CheckCircle2, 
   TrendingUp, Award, Play, Image as ImageIcon, ZoomIn, ArrowRight, ShieldCheck, Sparkles
 } from 'lucide-react';
 import { ProjectItem } from '../types';
@@ -91,18 +91,6 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   Client: {project.clientName}
                 </p>
               </div>
-
-              {project.websiteUrl && (
-                <a
-                  href={project.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs uppercase tracking-wider font-mono-tech transition-all shadow-lg shadow-cyan-500/25 shrink-0 w-fit"
-                >
-                  <span>VISIT LIVE STORE</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
             </div>
           </div>
 
