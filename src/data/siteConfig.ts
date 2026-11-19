@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
   whatsappNumber: "+8801771161787",
   location: "Chapai Nawabganj, Rajshahi, Bangladesh",
   profilePhoto: "https://cdn.phototourl.com/free/2026-09-06-2c7212b9-7c48-4612-a832-021f6d188bae.jpg", // Official real profile photo
-  cvPdfUrl: "", // Paste your exact CV PDF URL here
+  cvPdfUrl: "/assets/aistudio/Zunaid_CV_updated_dbd2f832.pdf", // Updated official CV PDF
   meetingCalendarUrl: "https://calendly.com", // Easy to update or replace
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/md-zunaid-masud-616083379",

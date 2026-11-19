@@ -16,9 +16,9 @@ export const ResumeSection: React.FC = () => {
   const [isDownloading, setIsDownloading] = useState(false);
 
   // =========================================================
-  // ORIGINAL CV LINK
+  // UPDATED CV PDF ASSET
   // =========================================================
-  const CV_URL = 'https://shorturl.at/A98K7';
+  const CV_URL = '/assets/aistudio/Zunaid_CV_updated_dbd2f832.pdf';
   const CV_FILE_NAME = 'MD_Zunaid_Masud_CV.pdf';
 
   // =========================================================
