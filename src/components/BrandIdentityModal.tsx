@@ -30,28 +30,33 @@ export const BrandIdentityModal: React.FC<BrandIdentityModalProps> = ({ isOpen, 
 
   const rawSvgCode = `<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="mzm-blue-primary" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#60A5FA" />
-      <stop offset="45%" stopColor="#2563EB" />
-      <stop offset="100%" stopColor="#1D4ED8" />
+    <radialGradient id="bg-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#172554" />
+      <stop offset="65%" stop-color="#080D24" />
+      <stop offset="100%" stop-color="#050816" />
+    </radialGradient>
+    <linearGradient id="blue-primary" x1="15%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#93C5FD" />
+      <stop offset="45%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
     </linearGradient>
-    <linearGradient id="mzm-crimson-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#FF6584" />
-      <stop offset="50%" stopColor="#FF3B5C" />
-      <stop offset="100%" stopColor="#DC2626" />
+    <linearGradient id="blue-facet" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="55%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#60A5FA" />
     </linearGradient>
-    <linearGradient id="mzm-bg-dark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#0E1638" />
-      <stop offset="100%" stopColor="#050816" />
+    <linearGradient id="crimson-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6584" />
+      <stop offset="55%" stop-color="#FF3B5C" />
+      <stop offset="100%" stop-color="#DC2626" />
     </linearGradient>
   </defs>
-  <rect x="6" y="6" width="108" height="108" rx="24" fill="url(#mzm-bg-dark)" stroke="rgba(37, 99, 235, 0.4)" strokeWidth="1.5"/>
-  <g transform="translate(18, 22)">
-    <path d="M6 68 V14 L24 38 V68 H6Z" fill="url(#mzm-blue-primary)" />
-    <path d="M24 38 L42 14 L60 38 L78 14 V68 H62 V38 L42 66 L24 38Z" fill="url(#mzm-blue-primary)" />
-    <path d="M24 68 L48 40 H78 V54 L56 68 H24Z" fill="url(#mzm-blue-primary)" opacity="0.95" />
-    <path d="M60 14 L78 14 L68 28 L50 28 L60 14Z" fill="url(#mzm-crimson-accent)" />
-  </g>
+  <rect width="120" height="120" rx="24" fill="url(#bg-glow)" />
+  <circle cx="60" cy="60" r="42" fill="#2563EB" opacity="0.14" />
+  <path d="M20 88V32H30L39 50L48 32H58V88H48V52L39 68L30 52V88H20Z" fill="url(#blue-primary)" />
+  <path d="M48 32H58V88H48V52L39 68V50L48 32Z" fill="url(#blue-facet)" opacity="0.85" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M64 32H80C93 32 100 41 100 60C100 79 93 88 80 88H64V32ZM74 42V78H79C86 78 89 72 89 60C89 48 86 42 79 42H74Z" fill="url(#blue-facet)" />
+  <path d="M39 27L43.5 34L39 41L34.5 34L39 27Z" fill="url(#crimson-accent)" />
 </svg>`;
 
   const handleCopySvg = () => {
@@ -155,14 +160,14 @@ export const BrandIdentityModal: React.FC<BrandIdentityModalProps> = ({ isOpen, 
 
                   <div className="flex flex-wrap items-center gap-3 pt-2">
                     <button
-                      onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Brand-Logo.jpg')}
+                      onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Brand-Logo.svg')}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs font-mono-tech uppercase tracking-wider transition-all shadow-lg shadow-blue-600/30"
                     >
                       <Download className="w-3.5 h-3.5" />
-                      <span>Download Full Logo (8K)</span>
+                      <span>Download Full Logo (SVG)</span>
                     </button>
                     <button
-                      onClick={() => handleDownloadAsset(BRAND_ASSETS.iconMonogram3D, 'MD-Zunaid-Masud-Icon-Monogram.jpg')}
+                      onClick={() => handleDownloadAsset(BRAND_ASSETS.iconMonogram3D, 'MD-Zunaid-Masud-Icon-Monogram.svg')}
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass border border-white/20 hover:border-white/40 text-white font-bold text-xs font-mono-tech uppercase tracking-wider transition-all"
                     >
                       <Download className="w-3.5 h-3.5 text-blue-400" />
@@ -254,7 +259,7 @@ export const BrandIdentityModal: React.FC<BrandIdentityModalProps> = ({ isOpen, 
                       Used for: Website Hero, Presentations, Invoices, Case Study Covers & Investor Decks.
                     </div>
                     <button
-                      onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Full-Logo.jpg')}
+                      onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Full-Logo.svg')}
                       className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs font-mono-tech uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30"
                     >
                       <Download className="w-4 h-4" />
@@ -290,7 +295,7 @@ export const BrandIdentityModal: React.FC<BrandIdentityModalProps> = ({ isOpen, 
                       Used for: Favicons, Social Media Avatars (LinkedIn, Meta, X), App Icons, & Browser Badges.
                     </div>
                     <button
-                      onClick={() => handleDownloadAsset(BRAND_ASSETS.iconMonogram3D, 'MD-Zunaid-Masud-Monogram-Icon.jpg')}
+                      onClick={() => handleDownloadAsset(BRAND_ASSETS.iconMonogram3D, 'MD-Zunaid-Masud-Monogram-Icon.svg')}
                       className="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs font-mono-tech uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-600/30"
                     >
                       <Download className="w-4 h-4" />
@@ -470,7 +475,7 @@ export const BrandIdentityModal: React.FC<BrandIdentityModalProps> = ({ isOpen, 
               Close
             </button>
             <button
-              onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Brand-Suite.jpg')}
+              onClick={() => handleDownloadAsset(BRAND_ASSETS.fullLogo3D, 'MD-Zunaid-Masud-Brand-Suite.svg')}
               className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono-tech uppercase font-bold transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2"
             >
               <Download className="w-3.5 h-3.5" />

@@ -1,9 +1,9 @@
 import React from 'react';
 
-// Generated high-res luxury 3D brand assets
+// Local high-res brand vector assets (zero external CDN dependency)
 export const BRAND_ASSETS = {
-  fullLogo3D: 'https://cdn.phototourl.com/free/2026-08-28-41d2b589-de6d-4a79-a187-8c7e783a9629.png?v=2',
-  iconMonogram3D: 'https://cdn.phototourl.com/free/2026-08-28-41d2b589-de6d-4a79-a187-8c7e783a9629.png?v=2',
+  fullLogo3D: '/logo.svg',
+  iconMonogram3D: '/logo.svg',
   brandName: 'MD ZUNAID MASUD',
   tagline: 'DIGITAL MARKETING & PERFORMANCE GROWTH',
   colors: {
@@ -39,94 +39,65 @@ export const VectorMonogram: React.FC<{ size?: number; className?: string }> = (
       className={`transition-transform duration-300 ${className}`}
     >
       <defs>
-        {/* Electric Blue Primary Gradient */}
-        <linearGradient id="mzm-blue-primary" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#60A5FA" />
-          <stop offset="45%" stopColor="#2563EB" />
+        <radialGradient id="mzm-bg-glow" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stopColor="#172554" />
+          <stop offset="65%" stopColor="#080D24" />
+          <stop offset="100%" stopColor="#050816" />
+        </radialGradient>
+        <linearGradient id="mzm-blue-primary" x1="15%" y1="15%" x2="85%" y2="85%">
+          <stop offset="0%" stopColor="#93C5FD" />
+          <stop offset="45%" stopColor="#3B82F6" />
           <stop offset="100%" stopColor="#1D4ED8" />
         </linearGradient>
-
-        {/* Electric Blue Secondary / Facet Gradient */}
         <linearGradient id="mzm-blue-highlight" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#1E40AF" />
-          <stop offset="60%" stopColor="#3B82F6" />
-          <stop offset="100%" stopColor="#93C5FD" />
+          <stop offset="0%" stopColor="#1E3A8A" />
+          <stop offset="55%" stopColor="#2563EB" />
+          <stop offset="100%" stopColor="#60A5FA" />
         </linearGradient>
-
-        {/* Crimson Red Subtle Accent */}
         <linearGradient id="mzm-crimson-accent" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#FF6584" />
-          <stop offset="50%" stopColor="#FF3B5C" />
+          <stop offset="55%" stopColor="#FF3B5C" />
           <stop offset="100%" stopColor="#DC2626" />
         </linearGradient>
-
-        {/* Ambient Dark Navy Surface */}
-        <linearGradient id="mzm-bg-dark" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0E1638" />
-          <stop offset="100%" stopColor="#050816" />
-        </linearGradient>
-
-        {/* Specular Glow Filter */}
-        <filter id="mzm-glow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="6" result="blur" />
-          <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
       </defs>
 
-      {/* Background Container Tile */}
-      <rect
-        x="4"
-        y="4"
-        width="112"
-        height="112"
-        rx="26"
-        fill="url(#mzm-bg-dark)"
-        stroke="rgba(255, 255, 255, 0.12)"
-        strokeWidth="1.5"
+      {/* Deep Navy Ambient Backdrop */}
+      <rect width="120" height="120" rx="24" fill="url(#mzm-bg-glow)" />
+      <circle cx="60" cy="60" r="42" fill="#2563EB" opacity="0.14" />
+
+      {/* Geometric M */}
+      <path
+        d="M20 88V32H30L39 50L48 32H58V88H48V52L39 68L30 52V88H20Z"
+        fill="url(#mzm-blue-primary)"
       />
-      <rect
-        x="4"
-        y="4"
-        width="112"
-        height="112"
-        rx="26"
-        fill="none"
-        stroke="rgba(37, 99, 235, 0.35)"
-        strokeWidth="1"
+      <path
+        d="M48 32H58V88H48V52L39 68V50L48 32Z"
+        fill="url(#mzm-blue-highlight)"
+        opacity="0.85"
       />
 
-      {/* Internal Ambient Radial Shimmer */}
-      <circle cx="60" cy="60" r="38" fill="#2563EB" opacity="0.15" filter="url(#mzm-glow)" />
+      {/* Geometric D */}
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M64 32H80C93 32 100 41 100 60C100 79 93 88 80 88H64V32ZM74 42V78H79C86 78 89 72 89 60C89 48 86 42 79 42H74Z"
+        fill="url(#mzm-blue-highlight)"
+      />
 
-      {/* Modern Geometric 3D MD Monogram */}
-      <g transform="translate(18, 20)">
-        {/* Left M Pillar */}
-        <path
-          d="M6 72 V16 L25 42 L44 16 V72 H30 V38 L25 46 L20 38 V72 H6Z"
-          fill="url(#mzm-blue-primary)"
-        />
+      {/* Specular Edge Highlight */}
+      <path
+        d="M20 32.5H30L39 50.5L48 32.5H58M64 32.5H80C90 32.5 96 38.5 98.5 50"
+        stroke="#BFDBFE"
+        strokeOpacity="0.55"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+      />
 
-        {/* Right D Block */}
-        <path
-          d="M48 16 H68 C78 16 84 24 84 44 C84 64 78 72 68 72 H48 V16ZM62 58 C68 58 70 52 70 44 C70 36 68 30 62 30 H60 V58 H62Z"
-          fill="url(#mzm-blue-highlight)"
-        />
-
-        {/* Top Crimson Red Wedge Accent */}
-        <path
-          d="M40 16 L52 16 L46 26 L34 26 L40 16Z"
-          fill="url(#mzm-crimson-accent)"
-        />
-
-        {/* Specular Edge Line */}
-        <path
-          d="M6 16 L25 42 L44 16 M48 16 H68"
-          stroke="#FFFFFF"
-          strokeWidth="1.2"
-          strokeOpacity="0.45"
-          strokeLinecap="round"
-        />
-      </g>
+      {/* Crimson Apex Diamond Accent */}
+      <path
+        d="M39 27L43.5 34L39 41L34.5 34L39 27Z"
+        fill="url(#mzm-crimson-accent)"
+      />
     </svg>
   );
 };
@@ -143,7 +114,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     sm: { iconSize: 34, iconBox: 'w-8 h-8 sm:w-9 sm:h-9', title: 'text-xs', sub: 'text-[8.5px] sm:text-[9px]' },
     md: { 
       iconSize: 42, 
-      iconBox: 'w-9 h-9 min-[360px]:w-10 min-[360px]:h-10 sm:w-12 sm:h-12', 
+      iconBox: 'w-9 h-9 min-[360px]:w-10 min-[360px]:h-10 sm:w-11 sm:h-11', 
       title: 'text-[13px] min-[360px]:text-[14px] sm:text-[15px]', 
       sub: 'text-[8.5px] min-[360px]:text-[9px] sm:text-[10px] min-[1280px]:text-[10.5px]' 
     },
@@ -161,13 +132,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         className={`relative inline-flex items-center justify-center cursor-pointer group select-none ${className}`}
       >
         {use3DRender ? (
-          <div className={`${currentSize.iconBox} relative rounded-2xl overflow-visible border border-blue-500/35 shadow-[0_0_22px_rgba(37,99,235,0.28)] group-hover:border-blue-400 group-hover:shadow-[0_0_32px_rgba(37,99,235,0.55)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center p-1`}>
-            <img
-              src={BRAND_ASSETS.iconMonogram3D}
-              alt="MD Zunaid Masud 3D Logo"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain"
-            />
+          <div className={`${currentSize.iconBox} relative rounded-2xl overflow-hidden border border-blue-500/35 shadow-[0_0_22px_rgba(37,99,235,0.28)] group-hover:border-blue-400 group-hover:shadow-[0_0_32px_rgba(37,99,235,0.55)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center`}>
+            <VectorMonogram className="w-full h-full" />
           </div>
         ) : (
           <VectorMonogram size={currentSize.iconSize} className="group-hover:scale-105 transition-transform" />
@@ -184,13 +150,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         className={`flex flex-col items-center text-center group cursor-pointer select-none ${className}`}
       >
         <div className="relative mb-3">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-visible border border-blue-500/40 shadow-[0_0_35px_rgba(37,99,235,0.35)] group-hover:border-blue-400 group-hover:shadow-[0_0_45px_rgba(37,99,235,0.6)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center p-1.5">
-            <img
-              src={BRAND_ASSETS.iconMonogram3D}
-              alt="MD Zunaid Masud 3D Logo"
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain"
-            />
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-blue-500/40 shadow-[0_0_35px_rgba(37,99,235,0.35)] group-hover:border-blue-400 group-hover:shadow-[0_0_45px_rgba(37,99,235,0.6)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center">
+            <VectorMonogram className="w-full h-full" />
           </div>
         </div>
 
@@ -219,13 +180,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         onClick={onClick}
         className={`inline-flex items-center gap-2.5 px-3 py-1.5 rounded-xl glass border border-white/15 hover:border-blue-400/50 transition-all cursor-pointer group select-none ${className}`}
       >
-        <div className="w-7 h-7 rounded-lg overflow-visible border border-blue-500/40 bg-[#050816] flex-shrink-0 flex items-center justify-center p-0.5">
-          <img
-            src={BRAND_ASSETS.iconMonogram3D}
-            alt="MZM Icon"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-contain"
-          />
+        <div className="w-7 h-7 rounded-lg overflow-hidden border border-blue-500/40 bg-[#050816] flex-shrink-0 flex items-center justify-center">
+          <VectorMonogram className="w-full h-full" />
         </div>
         <div className="flex items-center gap-2 text-[11px] font-mono-tech uppercase tracking-wider text-white whitespace-nowrap">
           <span className="font-bold">MD ZUNAID MASUD</span>
@@ -235,21 +191,16 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     );
   }
 
-  // 4. Default: Horizontal Header Lockup (Clean 3D Icon + Neatly Aligned Single-Line Typography)
+  // 4. Default: Horizontal Header Lockup (Crisp Vector Monogram + Neatly Aligned Single-Line Typography)
   return (
     <div
       onClick={onClick}
       className={`group flex items-center gap-2 min-[360px]:gap-2.5 sm:gap-3.5 cursor-pointer select-none min-w-0 w-full max-w-full ${className}`}
     >
-      {/* 3D Blue Logo Icon - Prominent, crisp, adaptive */}
+      {/* Blue Monogram Logo Icon - Prominent, crisp, adaptive */}
       <div className="relative flex-shrink-0">
-        <div className={`${currentSize.iconBox} rounded-xl sm:rounded-2xl overflow-visible border border-blue-500/35 shadow-[0_0_20px_rgba(37,99,235,0.3)] group-hover:border-blue-400 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.55)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center p-1 sm:p-1.5`}>
-          <img
-            src={BRAND_ASSETS.iconMonogram3D}
-            alt="MD Zunaid Masud 3D Logo"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-contain"
-          />
+        <div className={`${currentSize.iconBox} rounded-xl sm:rounded-2xl overflow-hidden border border-blue-500/35 shadow-[0_0_20px_rgba(37,99,235,0.3)] group-hover:border-blue-400 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.55)] group-hover:scale-105 transition-all duration-300 bg-[#050816] flex items-center justify-center`}>
+          <VectorMonogram className="w-full h-full" />
         </div>
       </div>
 
